@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+    <h1>
+        <b><u>Student Grades</u></b>
+    </h1>
+    <div id="page">
+        <label for="math">Math</label> <br>
+        <input type="text" id="math" placeholder="Type in your math score here"> <br>
+        <label for="English">English</label> <br>
+        <input type="text" id="english" placeholder="Type in your english score here"> <br>
+        <label for="physics">Physics</label> <br>
+        <input type="text" id="physics" placeholder="Type in your physics score here"> <br>
+        <label for="biology">Biology</label> <br>
+        <input type="text" id="biology" placeholder="Type in your biology score here"> <br>
+        <label for="Chemistry">Chemistry</label> <br>
+        <input type="text" id="chemistry" placeholder="Type in your chemistry score here"> <br>
+        <button type="submit" onclick="producegrade()">Calculate Score</button>
+
+        <div id="student">
+
+
+        </div>
+    </div>
+</body>
+
+<script>
+
+    function producegrade() {
+        let math= parseFloat(document.getElementById ("math").value||0);
+        let english= parseFloat(document.getElementById ("english").value||0);
+        let physics= parseFloat(document.getElementById ("physics").value||0);
+        let biology= parseFloat(document.getElementById ("biology").value||0);
+        let chemistry= parseFloat(document.getElementById ("chemistry").value||0);
+        let Total= math+english+physics+biology+chemistry;
+        let Average= Total/5;
+
+        function grading(score){
+            if(score=100) {
+            return "FULL RIDE SCHOLARSHIP!!!!!";
+        }
+        else if(score>=75) {
+            return "A";
+        }
+        else if(score>=65) {
+            return "B2";
+        }
+         else if(score>=60) {
+            return "B3";
+        }
+        else if(score>=55) {
+            return "C4";
+        }
+        else if(score>=50) {
+            return "C6";
+        }
+        else if(score>=45) {
+            return "D7";
+        }
+        else if(score>=40) {
+            return "E8";
+        }
+        else if(score>=35) {
+            return "F9";
+        }
+        if(score<=30 && score>=0) {
+            return "REPEAT";
+        }
+
+    }
+    let Grade=grading(Average);
+    document.getElementById("student")
+    .innerHTML= `<p>Total: ${Total}</p> <p>Average: ${Average}</p> <p>Grade: ${Grade}</p>`;
+    }
+
+</script>
+</html>

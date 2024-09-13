@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Practice</title>
+</head>
+<body>
+    <h1 id="java">
+        Welcome to Javascript 101
+    </h1>
+    <p>
+        Calculate (x+y)*(y+z)-(z+x) gving the output the answer is the answer
+    </p>
+    <h1>
+        Simple Interest Calculation
+    </h1> <br>
+    <button onclick="simpleinterest()"> Simple Interest Answer</button> <br>
+    <button onclick="grade()">grade total</button> <br>
+    <!-- <button onclick="average()">grade average</button> -->
+    <!-- /Invested 10,000 dollars at the rate of 8% for 16years
+    grade of students in math, physics, biology,english score... giving the result of the total score and average. -->
+</body>
+
+
+<script>
+    function simpleinterest() {
+        let principal, rate, time, SimpleInterest;
+            rate= 8/100;
+            principal= 10000;
+            time= 16;
+            SimpleInterest = (principal * time * rate)
+            alert("Simple Interest = " +SimpleInterest)
+            // document.getElementById("java").innerHTML("Simple Interest = " +SimpleInterest)
+        }
+
+    function grade() {
+        var math= prompt("Type in your math score");
+        var biology= prompt("Type in your biology score");
+        var physics= prompt("Type in your physics score");
+        var english= prompt("Type in your english score");
+        var Total= (parseInt(math)+ parseInt(biology) + parseInt(physics) + parseInt(english));
+        var average= (Total/4)
+        alert( "Total =" +Total +   "Average = " +average) 
+    } 
+    // // let principal, rate, time, SimpleInterest;
+    // rate= 6/100;
+    // principal= 2000;
+    // time= 3;
+    // SimpleInterest = (principal * time * rate)
+    // alert("Simple Interest = " +SimpleInterest)
+
+    // function see(principal, rate, time){
+    //     return principal * time * rate
+    // }
+
+    let Interest = see(2000, 6/100, 3);
+    document.write("Interest = " +Interest);
+    // document.getElementById(java).innerHTML=SimpleInterest
+
+    let x =16; y=3, z=19;
+    let answer= (x+y) * (y+z) - (z+x)
+    document.write("The answer is " +answer+ ".something" )
+
+</script>
+</html>

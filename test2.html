@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test2</title>
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+    <h1>
+        Simple Interest Calculator
+    </h1>
+    <div id="page">
+        <label for="principal">Principal</label> <br>
+        <input type="text" id="principal" placeholder="Type in your principal amount here..."> <br>
+        <label for="rate">Rate</label> <br>
+        <input type="text" id="rate" placeholder="Type in rate percent here..."> <br>
+        <label for="time">Time</label> <br>
+        <input type="text" id="time" placeholder="Type in amount of time here"> <br>
+        <button type="submit" onclick="simpleinterest()">Calculate Interest</button>
+
+        <div id="result">
+
+        </div>
+</body>
+
+<script>
+    function simpleinterest() {
+        let Principal= parseFloat(document.getElementById("principal").value||0);
+        let Rate= parseFloat(document.getElementById("rate").value||0);
+        let Time= parseFloat(document.getElementById("time").value||0);
+        let SimpleInterest= (Principal * Rate * Time)/100;
+
+    function scale(level) {
+        if(level>=5000) {
+            return "High Interest Level";
+        }
+
+        else {
+            return "Low Interest Level";
+        }
+    }
+
+    let InterestLevel=scale(SimpleInterest);
+
+    document.getElementById("result").
+    innerHTML= `<p>Simple Interest = ${SimpleInterest}</p> <p>Interest Level = ${InterestLevel}</p>`;
+    }
+</script>
+</html>
